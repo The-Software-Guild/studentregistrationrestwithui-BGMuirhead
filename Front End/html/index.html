@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home Page</title>
+
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="../bootstrap/js/bootstrap.bundle.min.js"></script>
+
+
+
+  <script src="../js/js.js"></script>
+  <link rel="stylesheet" href="../css/style.css" />
+
+</head>
+
+<body>
+
+
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">Student Registration</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li id="register"><a href="#" onclick="DisplayRegisterStudents()">Register</a></li>
+        <li id="showAll"><a href="#">Show Students</a></li>
+        <li id="find"><a href="#" onclick="DisplayGetStudent()">Find Student</a></li>
+        <li id="update"><a href="#" onclick="DisplayUpdateStudent()">Update Details</a></li>
+        <li id="delete"><a href="#" onclick="DisplayDeleteStudent()">Delete Student</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="side col-1	col-sm-1	col-md-3	col-lg-3	col-xl-3" id="side">
+
+  </div>
+  <!-- This is the body of the form -->
+    
+  <div class="col-10	col-sm-10	col-md-6	col-lg-6	col-xl-6 d-flex align-items-center justify-content-center " id="pageBody">
+
+
+    <!-- Start Register Div -->
+    <div id="registerStudent">
+      <h1 class="text-center">Register Student</h1>
+      <h3 class="text-center">Please register your details below
+      </h3>
+      <form>
+        <div class="col-3 col-sm-3 col-md-3 col-lg-3"></div>
+        <div class="col-6 col-sm-6 col-md-6 col-lg-6">
+
+
+          <div class="form-group ">
+            <label for="regName">Full Name:</label>
+            <input type="text" class="form-control" id="regName" placeholder="John Smith">
+          </div>
+          <div class="form-group">
+            <label for="regAge">Age:</label>
+            <input type="number" class="form-control" id="regAge" placeholder="20">
+          </div>
+          <div class="form-group">
+            <label for="regMobile">Mobile:</label>
+            <input type="number" class="form-control" id="regMobile" placeholder="0412345678">
+          </div>
+
+          <div class="form-group">
+            <label for="regAddress">Address</label>
+            <input type="text" class="form-control" id="regAddress" placeholder="Sydney">
+          </div>
+          <div class="container col-12 col-sm-12 col-md-12 col-lg-12 d-flex align-items-center justify-content-center
+        text-center">
+            <button type="submit" id="registerButton" class="btn btn-primary">Submit</button>
+          </div>
+        </div>
+
+        <div class="col-3 col-sm-3 col-md-3 col-lg-3"></div>
+      </form>
+    </div>
+    <!-- End Register Div -->
+
+    
+      <!-- Start All Students Div -->
+      <div id="allStudents">
+        <h1 class="text-center">All Students</h1>
+
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Name</th>
+              <th scope="col">Age</th>
+              <th scope="col">Mobile</th>
+              <th scope="col">Address</th>
+            </tr>
+          </thead>
+
+          <tbody class="text-left" id="allStudentsTable">
+
+          </tbody>
+        </table>
+      </div>
+      <!-- End ALl Students Div -->
+
+
+
+      <!-- Start Update Div -->
+      <div id="updateStudent">
+        <h1 class="text-center">Update Student</h1>
+
+
+        <div class="col-sm-3 col-md-3 col-lg-3"></div>
+        <div class="col-sm-6 col-md-6 col-lg-6">
+
+
+          <nav class="navbar navbar-light bg-light text-center">
+            <form class="form-inline">
+              <input class="form-control mr-sm-2" id="updateID" type="search" placeholder="Enter Student ID"
+                aria-label="Search">
+              <button type="submit" id="updateSearch" class="btn btn-primary"><i class="fa fa-search"></i></button>
+            </form>
+          </nav>
+
+          <form id="updateForm">
+            <div class="form-group col-sm-12 col-md-12 col-lg-12 ">
+              <label for="updateName">Full Name:</label>
+              <input type="text" class="form-control" id="updateName" placeholder="John Smith">
+            </div>
+            <div class="form-group col-sm-12 col-md-12 col-lg-12 ">
+              <label for="updateMobile">Mobile:</label>
+              <input type="number" class="form-control" id="updateMobile" placeholder="0412345678">
+            </div>
+
+            <div class="form-group col-sm-12 col-md-12 col-lg-12 ">
+              <label for="updateAddress">Address</label>
+              <input type="text" class="form-control" id="updateAddress" placeholder="Sydney">
+            </div>
+            <label hidden id="storeID"></label>
+            <label hidden id="storeAge"></label>
+            <div
+              class="container col-sm-12 col-md-12 col-lg-12 d-flex align-items-center justify-content-center text-center">
+              <button type="submit" id="updateStudentDetails" class="btn btn-primary">Submit</button>
+            </div>
+          </form>
+        </div>
+        <div class="col-sm-3 col-md-3 col-lg-3"></div>
+
+      </div>
+      <!-- End Update Div -->
+
+      <!-- Start Get Student -->
+      <div  id="getStudent">
+        <h1 class="text-center">Search Student</h1>
+
+        <div class="col-sm-3 col-md-3 col-lg-3"></div>
+        <div class="col-sm-6 col-md-6 col-lg-6 text-center">
+
+          <nav class="navbar navbar-light bg-light">
+            <form class="form-inline">
+              <input class="form-control mr-sm-2" id="sIDSearch" type="search" placeholder="Enter Student ID"
+                aria-label="Search">
+              <button type="submit" id="getOneStudent" class="btn btn-primary"><i class="fa fa-search"></i></button>
+            </form>
+          </nav>
+
+
+
+
+        </div>
+        <div class="col-sm-3 col-md-3 col-lg-3"></div>
+
+        <div class="col-sm-12 col-md-12 col-lg-12">
+
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Age</th>
+                <th scope="col">Mobile</th>
+                <th scope="col">Address</th>
+              </tr>
+            </thead>
+            <tbody class="text-left" id="singleStudentsTable">
+
+            </tbody>
+
+
+          </table>
+        </div>
+
+
+      </div>
+      <!-- End Get Student -->
+
+      <!-- Start Delete Student -->
+      <div id="deleteStudent">
+        <h1 class="text-center">Delete Student</h1>
+
+        <div class="col-sm-3 col-md-3 col-lg-3"></div>
+        <div class="col-sm-6 col-md-6 col-lg-6 d-flex align-items-center justify-content-center text-center">
+
+          <nav class="navbar navbar-light bg-light">
+            <form class="form-inline">
+              <input class="form-control mr-sm-2" type="search" id="delID" aria-label="Search">
+              <button type="submit" id="delButton" class="btn btn-primary"><i class="fa fa-search"></i></button>
+            </form>
+          </nav>
+
+
+        </div>
+        <div class="col-sm-3 col-md-3 col-lg-3"></div>
+
+      </div>
+      <!-- End Delete Student -->
+   
+
+
+  </div>
+  <!-- for profile card -->
+  <!-- https://www.w3schools.com/howto/howto_css_cards.asp -->
+
+
+  <div class="side col-1	col-sm-1	col-md-3	col-lg-3	col-xl-3" id="side">
+  
+  </div>
+
+
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+button{
+    padding-left: 50px;
+}
+
+
+/* div#side{
+background-color: #d3d3d373;
+height: 100%;
+} */
+
+.navbar-default{
+    margin-bottom: 0px;
+}
+
+
+html {
+    height: 100%; /* <------------ */
+    /* width: 100%; */
+}
+
+body {
+    text-align: center;
+    height: 100%; /* <------------ */
+    /* width: 100%; */
+}
+
+
+.col-0{
+
+    height: 0%;
+}
+
+.col-sm-0{
+    height: 0%;
+}
+
+
+.side{
+    background-color: #d3d3d373;
+    height: 100%;
+}
